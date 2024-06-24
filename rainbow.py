@@ -13,8 +13,6 @@ if __name__ == "__main__":
     sample_4 = [(1,10), (2, 15), (3, 5), (4, 70)]
     sample_5 = [(1,0), (2, 5), (3, 5), (4, 90)]
 
-    legend_labels = [1, 2, 3, 4, 5]
-
     data = [sample_0, sample_1, sample_2, sample_3, sample_4, sample_5]
 
     yellow_cmap = LinearSegmentedColormap.from_list(
@@ -28,13 +26,9 @@ if __name__ == "__main__":
         if c == "Yellows":
             palette.append(yellow_palette)
         else:
-            palette.append(sns.color_palette(c, n_colors=4))
-
-
-    colors = [palette[i*4:(i+1)*4] for i, val in enumerate(data)] 
+            palette.append(sns.color_palette(c, n_colors=len(sample_0)))
 
     rb = RainbowPlot()
-
     fig, ax = rb.plot(data, palette, group_by=None, legend=False)
 
     fig.savefig("rainbow.png")
