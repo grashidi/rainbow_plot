@@ -20,7 +20,6 @@ class RainbowPlot():
         self.w = self.radius / n 
 
         r = self.compute_radii(n, group_by)
-        print(r)
 
         for i, d in enumerate(data):
             w_inner = self.w
@@ -30,7 +29,7 @@ class RainbowPlot():
 
             outer_radius = r[i]
             inner_radius = r[i] - (r[0] - r[1]) if len(r) > 2 else r[i] - r[0]
-            print(i, outer_radius, inner_radius)
+
             innerring = ax.pie([v[1] for v in d] + [sum(v[1] for v in d)],
                                labels=None,
                                colors=colors[i] + ["white"],
