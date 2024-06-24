@@ -66,13 +66,14 @@ class RainbowPlot():
         # distance of radii between each group
         # radius - distance taken up radii within each group - width offset / number of group - 1
         gap = round((self.radius - (in_group_dist * num_groups * (group_by - 1)) - self.w) / (num_groups - 1 if group_by > 1 else 1), 1)
-
-        print(in_group_dist, gap, num_groups)
         
         r = [self.w]
         tmp = self.w
         for i in range(n - 1):
-            tmp += in_group_dist if (i + 1) % group_by != 0 else gap
+            if group_by > 1:
+                tmp += in_group_dist if (i + 1) % group_by != 0 else gap
+            else:
+                tmp += in_group_dist
             r.append(tmp)
 
         r = r[::-1]
