@@ -53,7 +53,7 @@ if __name__ == "__main__":
     ax.text(-0.25, -0.22, "Group\n3", ha="center", va="center", fontsize=16, fontweight='bold', color="lightgrey")
 
 
-    fig.savefig('example' + ".png")
+    fig.savefig("example.png")
     plt.close(fig)
 ```
-<img src=doc/img/example.png width="400px">
+<img src=doc/img/example.png width="450px">
