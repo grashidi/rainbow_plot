@@ -56,4 +56,4 @@ if __name__ == "__main__":
     fig.savefig("example.png")
     plt.close(fig)
 ```
-<img src=doc/img/example.png width="450px">
+<img src=doc/img/example.png width="600px">
